@@ -1,0 +1,4 @@
+#!/bin/bash
+
+csv-each-row -He 'use Data::Dmp; for my $nutrient (sort keys %$_) { next if $nutrient =~ /^(group|weight|height)$/; my $row2={group=>$_->{group},height=>$_->{height},weight=>$_->{weight},symbol=>$nutrient, ref=>$_->{$nutrient}}; print Data::Dmp::dmp($row2),",\n" }' \
+  ../devdata/akg.csv
